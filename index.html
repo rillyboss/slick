@@ -317,54 +317,63 @@
         vertical: true,
         centerMode: true,
         slidesToShow: 4,
-        slidesToScroll: 2
-      });
+        slidesToScroll: 2,
+        uniqueId: "testUniqueId-a"
+      }, "someUniqueId");
       $(".vertical-center-3").slick({
         dots: true,
         vertical: true,
         centerMode: true,
         slidesToShow: 3,
-        slidesToScroll: 3
-      });
+        slidesToScroll: 3,
+        uniqueId: "testUniqueId-b"
+      }, "someUniqueId");
       $(".vertical-center-2").slick({
         dots: true,
         vertical: true,
         centerMode: true,
         slidesToShow: 2,
-        slidesToScroll: 2
-      });
+        slidesToScroll: 2,
+        uniqueId: "testUniqueId-c"
+      }, "someUniqueId");
       $(".vertical-center").slick({
         dots: true,
         vertical: true,
         centerMode: true,
-      });
+        uniqueId: "testUniqueId-d"
+      }, "someUniqueId");
       $(".vertical").slick({
         dots: true,
         vertical: true,
         slidesToShow: 3,
-        slidesToScroll: 3
-      });
+        slidesToScroll: 3,
+        uniqueId: "testUniqueId-e"
+      }, "someUniqueId");
       $(".regular").slick({
         dots: true,
         infinite: true,
         slidesToShow: 3,
-        slidesToScroll: 3
-      });
+        slidesToScroll: 3,
+        uniqueId: "testUniqueId-f"
+      }, "someUniqueId");
       $(".center").slick({
         dots: true,
         infinite: true,
         centerMode: true,
         slidesToShow: 5,
-        slidesToScroll: 3
-      });
+        slidesToScroll: 3,
+        uniqueId: "testUniqueId-g"
+      }, "someUniqueId");
       $(".variable").slick({
         dots: true,
         infinite: true,
-        variableWidth: true
-      });
+        variableWidth: true,
+        uniqueId: "testUniqueId-h"
+      }, "someUniqueId");
       $(".lazy").slick({
         lazyLoad: 'ondemand', // ondemand progressive anticipated
-        infinite: true
+        infinite: true,
+        uniqueId: "testUniqueId-i"
       });
     });
 </script>

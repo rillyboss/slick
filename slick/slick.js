@@ -173,6 +173,9 @@
 
             _.instanceUid = instanceUid++;
 
+            //Add a uniqueId for this 
+            _.uniqueId = settings.uniqueId;
+
             // A simple way to check for HTML strings
             // Strict HTML recognition (must start with <)
             // Extracted from jQuery v1.11 source
@@ -798,13 +801,13 @@
             $(_.$slideTrack).children().off('click.slick', _.selectHandler);
         }
 
-        $(window).off('orientationchange.slick.slick-' + _.instanceUid, _.orientationChange);
+        $(window).off('orientationchange.slick.slick-' + _.uniqueId, _.orientationChange);
 
-        $(window).off('resize.slick.slick-' + _.instanceUid, _.resize);
+        $(window).off('resize.slick.slick-' + _.uniqueId, _.resize);
 
         $('[draggable!=true]', _.$slideTrack).off('dragstart', _.preventDefault);
 
-        $(window).off('load.slick.slick-' + _.instanceUid, _.setPosition);
+        $(window).off('load.slick.slick-' + _.uniqueId, _.setPosition);
 
     };
 
@@ -1343,12 +1346,12 @@
 
                 $(this).attr({
                     'role': 'tabpanel',
-                    'id': 'slick-slide' + _.instanceUid + i,
+                    'id': 'slick-slide' + _.uniqueId+ "-"  + i,
                     'tabindex': -1
                 });
 
                 if (slideControlIndex !== -1) {
-                   var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex
+                   var ariaButtonControl = 'slick-slide-control' + _.uniqueId + "-" + slideControlIndex
                    if ($('#' + ariaButtonControl).length) {
                      $(this).attr({
                          'aria-describedby': ariaButtonControl
@@ -1366,8 +1369,8 @@
 
                 $(this).find('button').first().attr({
                     'role': 'tab',
-                    'id': 'slick-slide-control' + _.instanceUid + i,
-                    'aria-controls': 'slick-slide' + _.instanceUid + mappedSlideIndex,
+                    'id': 'slick-slide-control' + _.uniqueId + i,
+                    'aria-controls': 'slick-slide' + _.uniqueId + "-" + mappedSlideIndex,
                     'aria-label': (i + 1) + ' of ' + numDotGroups,
                     'aria-selected': null,
                     'tabindex': '-1'
@@ -1486,13 +1489,13 @@
             $(_.$slideTrack).children().on('click.slick', _.selectHandler);
         }
 
-        $(window).on('orientationchange.slick.slick-' + _.instanceUid, $.proxy(_.orientationChange, _));
+        $(window).on('orientationchange.slick.slick-' + _.uniqueId, $.proxy(_.orientationChange, _));
 
-        $(window).on('resize.slick.slick-' + _.instanceUid, $.proxy(_.resize, _));
+        $(window).on('resize.slick.slick-' + _.uniqueId, $.proxy(_.resize, _));
 
         $('[draggable!=true]', _.$slideTrack).on('dragstart', _.preventDefault);
 
-        $(window).on('load.slick.slick-' + _.instanceUid, _.setPosition);
+        $(window).on('load.slick.slick-' + _.uniqueId, _.setPosition);
         $(_.setPosition);
 
     };
